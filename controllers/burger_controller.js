@@ -7,18 +7,18 @@ router.get("/", function(req, res) {
       var hbsObject = {
         burgers: data
       }
-      console.log(hbsObject)
       res.render("index", hbsObject)
     })
 })
 
 router.post("/api/burgers", function(req, res) {
     burger.insertOne([
-      "burger_name"
+      "burger_name", "devoured:"
     ], [
-      req.body.burger_name
+      req.body.burger_name, false
     ], function(result) {
-      res.json({ id: result.insertId })
+      console.log("working")
+      res.json(result)
     })
 })
   
