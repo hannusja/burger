@@ -8,7 +8,7 @@
             <li>
                 {{burger_name}}
                 <button class="change_devoured" data-id="{{id}}">
-                    Eat this burger
+                    Devour it!
                 </button>
             </li>
         {{/unless}}
@@ -52,18 +52,16 @@
             )
         })
 
-        $(document).on("submit", "#create-form", function(event) {
+        $("#create-form").on("submit", function(event) {
             event.preventDefault()
-            console.log("working")
             var newBurger = {
-            burger_name: $("#burger_name).val().trim()
+            burger_name: $("#burger_name").val().trim().toString()
             }
             $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
             }).then(
             function() {
-                console.log("working")
                 location.reload()
             })
         })
