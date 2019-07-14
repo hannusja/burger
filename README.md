@@ -6,6 +6,8 @@ How to use it: You can add a burger. You can eat a burger. That's about it. Whol
 
 Here is link to Heroku:
 
+https://classique-maison-77797.herokuapp.com/
+
 If you wish to clone it and play with it locally: 
 * run 'npm install'
 * create MySQL Database by running content of schema.sql and seeds.sql in your MySQL Workbench
